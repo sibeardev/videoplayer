@@ -4,62 +4,59 @@
     <title>Пример подключения плеера</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="static/css/font-awesome.min.css">
-    <link rel="icon" href="static/favicon.ico">
     <style>
         #player {
+            display: flex;
+            flex-direction: column;
             width: 800px;
             height: 600px;
             box-shadow: 0 0 10px;
-            display: flex;
-            flex-direction: column;
         }
-        .video-container {
+        .screen {
             flex-grow: 1;
         }
-        .controls-container {
-            background-color: black;
+        .bottom-controls {
             flex-grow: 0;
             display: flex;
             align-items: center;
+            background-color: black;
         }
-        .controls-container button {
-            border: none;
-            cursor: pointer;
-            background-color: transparent;
-            margin: 10px 10px;
-        }
-        .controls-container i {
-            color: white;
-            font-size: 200%;
-            width: 40px;
-            height: 40px;
-            display: flex;
+        .bottom-controls .player-button {
             justify-content: center;
             align-items: center;
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 200%;
+            cursor: pointer;
         }
         .spacer {
             flex-grow: 1;
         }
     </style>
+    <link rel="icon" href="static/favicon.ico">
 </head>
 <body>
 <div id="player">
-    <div class="js-video-container video-container"></div>
-    <div class="controls-container">
-        <button class="js-play-button">
+    <div class="js-video-container screen"></div>
+    <div class="bottom-controls">
+        <button class="player-button js-play-button">
             <i class="fa fa-play" aria-hidden="true"></i>
         </button>
-        <button class="js-pause-button" hidden>
+        <button class="player-button js-pause-button" hidden>
             <i class="fa fa-pause" aria-hidden="true"></i>
         </button>
-        <button class="js-volume-button">
+        <button class="player-button js-volume-button">
             <i class="fa fa-volume-off" aria-hidden="true"></i>
         </button>
-        <button class="js-mute-button" hidden>
+        <button class="player-button js-mute-button" hidden>
             <i class="fa fa-volume-up" aria-hidden="true"></i>
         </button>
         <div class="spacer"></div>
-        <button class="js-fullscreen-button">
+        <button class="player-button js-fullscreen-button">
             <i class="fa fa-expand" aria-hidden="true"></i>
         </button>
     </div>
