@@ -51,6 +51,30 @@
             font-family: 'Roboto', sans-serif;
             margin: 0 2px;
         }
+        .viewing-progressbar{
+            flex: auto;
+        }
+        .progress{
+            display: flex;
+            align-items: center;
+            margin-left: 4px;
+        }
+        .progress-slider{
+            margin: 7px;
+            border-radius: 5px;
+            height: 5px;
+            background-color: #f8104d;
+        }
+        .slider{
+            height: 8px;
+            width: 8px;
+            margin-left: -10px;
+            background-color: #f8104d;
+            border-color: white;
+            border-width: 3px;
+            border-style: solid;
+            border-radius: 50%;
+        }
     </style>
     <link rel="icon" href="static/favicon.ico">
 </head>
@@ -76,7 +100,10 @@
         <div class="viewing-panel">
             <div class="viewing-time"><span class="js-current-time"></span></div>
             <div class="viewing-progressbar">
-
+                <div class="progress js-progress">
+                    <div class="progress-slider js-progress-slider"></div>
+                    <span class="slider"></span>
+                </div>
             </div>
             <div class="video-duration"><span class="js-duration"></span></div>
         </div>
