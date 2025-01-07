@@ -13,31 +13,43 @@
             margin-top: 20px;
             margin-left: 20px;
             box-shadow: 0 0 10px;
+            background-color: black;
         }
         .screen {
             flex-grow: 1;
         }
         .bottom-controls {
+            margin-bottom: 2px;
             flex-grow: 0;
             display: flex;
             align-items: center;
-            background-color: black;
         }
         .bottom-controls .player-button {
             justify-content: center;
             align-items: center;
             width: 40px;
             height: 40px;
-            margin-right: -2px;
-            margin-left: -2px;
             background-color: transparent;
             border: none;
             color: white;
             font-size: 120%;
             cursor: pointer;
         }
-        .spacer {
+        .bottom-controls .left-buttons .player-button{
+            margin: 0 -2px;
+            margin-right: -4px;
+        }
+        .bottom-controls .right-buttons .player-button{
+            margin: 0 -2px;
+        }
+        .viewing-panel{
+            display: flex;
             flex-grow: 1;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            margin: 0 2px;
         }
     </style>
     <link rel="icon" href="static/favicon.ico">
@@ -46,22 +58,34 @@
 <div id="player">
     <div class="js-video-container screen"></div>
     <div class="bottom-controls">
-        <button class="player-button js-play-button">
-            <i class="fa fa-play" aria-hidden="true"></i>
-        </button>
-        <button class="player-button js-pause-button" hidden>
-            <i class="fa fa-pause" aria-hidden="true"></i>
-        </button>
-        <button class="player-button js-volume-button">
-            <i class="fa fa-volume-off" aria-hidden="true"></i>
-        </button>
-        <button class="player-button js-mute-button" hidden>
-            <i class="fa fa-volume-up" aria-hidden="true"></i>
-        </button>
-        <div class="spacer"></div>
-        <button class="player-button js-fullscreen-button">
-            <i class="fa fa-expand" aria-hidden="true"></i>
-        </button>
+        <div class="left-buttons">
+            <button class="player-button js-play-button">
+                <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <button class="player-button js-pause-button" hidden>
+                <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+            <button class="player-button js-volume-button">
+                <i class="fa fa-volume-off" aria-hidden="true"></i>
+            </button>
+            <button class="player-button js-mute-button" hidden>
+                <i class="fa fa-volume-up" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="viewing-panel">
+            <div class="viewing-time"><span class="js-current-time"></span></div>
+            <div class="viewing-progressbar">
+
+            </div>
+            <div class="video-duration"><span class="js-duration"></span></div>
+        </div>
+
+        <div class="right-buttons">
+            <button class="player-button js-fullscreen-button">
+                <i class="fa fa-expand" aria-hidden="true"></i>
+            </button>
+        </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
